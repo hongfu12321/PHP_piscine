@@ -61,32 +61,11 @@ li:hover ul.level2{
   margin-top:-20%;
 }
 
-.purple{
-  background-color: #8E44AD;
-  border: 2px solid #663399;
-}
+.purple{background-color: #8E44AD; border: 2px solid #663399;}
 
-.blue{
-  background-color: #52B3D9;
-  border: 2px solid #4183D7;
-}
-.dark-blue{
-  background-color: #446CB3;
-  border: 2px solid #3A539B;
-}
-.green{
-  background-color: #1BBC9B;
-  border: 2px solid #019875;
-}
-.yellow{
-  background-color: #F5D76E;
-  border: 2px solid #F7CA18;
-}
-.orange{
-  background-color: #F2784B;
-  border: 2px solid #F9690E;
-}
-.red{
-  background-color: #D64541;
-  border: 2px solid #F22613;
-}
+.blue{background-color: #52B3D9; border: 2px solid #4183D7;}
+.dark-blue{background-color: #446CB3; border: 2px solid #3A539B;}
+.green{background-color: #1BBC9B; border: 2px solid #019875;}
+.yellow{background-color: #F5D76E; border: 2px solid #F7CA18;}
+.orange{background-color: #F2784B; border: 2px solid #F9690E;}
+.red{background-color: #D64541;border: 2px solid #F22613;}
