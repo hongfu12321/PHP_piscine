@@ -1,0 +1,66 @@
+body{
+  display: flex;
+  justify-content: center;
+  width:100%;
+  background-color: #ABFFFF;
+}
+body div{
+  width: 90%;
+  display: flex; flex-wrap: wrap;
+  justify-content: center;
+}
+img{position: absolute; right:0px; top:0px}
+h1{
+  flex: none;
+  font-size: 70px;
+  height: 150px;
+  width: 100%;
+  text-align: center;
+}
+table {
+  flex: none;
+  width: 100%;
+  border-collapse: collapse;
+}
+/* table, th, td {border: 1px solid black} */
+td{height: 70px; width: 5.5%;}
+.atomic_weight{
+  position: relative;
+  height: 15px;
+  text-align: right;
+  font-size: 10px;
+  padding-right: 4px; margin: 0px;
+}
+.atom{
+  position: relative;
+  font-weight: bold;
+  text-align: center;
+  font-size: 35px;
+  padding: 4px; margin: 0px;
+}
+.atomic_number{
+  position: relative;
+  height: 15px;
+  text-align: left; line-height: 15px;
+  font-size: 13px;
+  padding-right: 4px; margin: 0px;
+}
+
+tr:nth-child(n+2) td:nth-child(1){background-color: #F59F00; border: 1px solid black}
+tr:nth-child(n+2) td:nth-child(2){background-color: #FFFF78; border: 1px solid black}
+tr:nth-child(n+4) td:nth-child(n+3){background-color: #00F500; border: 1px solid black}
+tr:nth-child(n+4) td:nth-child(n+12){background-color: #990DFF; border: 1px solid black}
+tr:nth-child(3) td:nth-child(13){background-color: #990DFF; border: 1px solid black}
+tr:nth-child(2) td:nth-child(n+13){background-color: #F50000; border: 1px solid black}
+tr:nth-child(3) td:nth-child(n+14){background-color: #F50000; border: 1px solid black}
+tr:nth-child(4) td:nth-child(n+15){background-color: #F50000; border: 1px solid black}
+tr:nth-child(5) td:nth-child(n+16){background-color: #F50000; border: 1px solid black}
+tr:nth-child(6) td:nth-child(n+17){background-color: #F50000; border: 1px solid black}
+tr:nth-child(n) td:nth-child(18){background-color: #7878FF; border: 1px solid black}
+tr:nth-child(1) td:nth-child(1){background-color: #CFCFCF; border: 1px solid black}
+tr:nth-child(8) td:nth-child(n){background-color: #ABFFFF; border: 1px solid #ABFFFF}
+tr:nth-child(9) td:nth-child(n){background-color: #FF8282; border: 1px solid black}
+tr:nth-child(10) td:nth-child(n){background-color: #00F0F0; border: 1px solid black}
+tr:nth-child(6) td:nth-child(3){background-color: #FF8282; border: 1px solid black}
+tr:nth-child(7) td:nth-child(3){background-color: #00F0F0; border: 1px solid black}
+tr:nth-child(n+9) td:nth-child(-n+4){background-color: #ABFFFF; border: 1px solid #ABFFFF}
