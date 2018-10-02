@@ -7,8 +7,8 @@
 </head>
 <body>
   <div class="header">
-    <h1>Day of the 42</h1>
-    <img src="resourse/loupe.png" style="width:70px; height:70px;">
+    <img id="title" src="resourse/day_of_the_42.png">
+    <img class="loupe" src="resourse/loupe.png" style="width:200px; height:120px;">
     <div>
       <a href="http://www.disney.com">
         <img src="resourse/reload.png" title="Start from the beginning">
@@ -22,17 +22,26 @@
     <div class="side">
       <img title="Advance" class="item" src="resourse/arrow.png"/>
       <img title="Take" class="item" src="resourse/main.png"/>
-      <img title="Look" class="item" src="resourse/oeil.png"/>
+      <img id="Look"title="Look" class="item" src="resourse/oeil.png"/>
       <img title="Use" class="item" src="resourse/outil.png"/>
       <img title="Speak" class="item" src="resourse/chat-icon.png"/>
     </div>
     <div class="middle">
       <img src="resourse/cluster.jpg"/>
+	  <a id="apple" title="apple" href="http://www.apple.com"></a>
+	  <a id="ikea" title="ikea" href="http://www.ikea.com"></a>
     </div>
     <div class="side">
       <img class="item" src="resourse/book.png"/>
       <img class="item" src="resourse/towel.png"/>
-      <img class="item" src="resourse/brick.jpg"/>
+      <div id="brick" class="item">
+	  	<img class="special_brick" src="resourse/brick.jpg"/>
+	  	<img class="special_brick" src="resourse/brick.jpg"/>
+	  	<img class="special_brick" src="resourse/brick.jpg"/>
+	  	<img class="special_brick" src="resourse/brick.jpg"/>
+	  	<img class="special_brick" src="resourse/brick.jpg"/>
+	  	<img class="special_brick" src="resourse/brick.jpg"/>
+	  </div>
       <div class="item"></div>
       <div class="item"></div>
     </div>
@@ -42,7 +51,7 @@
     alors dans une grande piece replie<br>
     d'ordinateurs...<br>
     - Boujour, vous etes nouveau ici?<br>
-    <input type="text" size="55"/>  <button id="btn">Repondre</button>
+    <input type="text" size="50"/>  <button id="btn">Repondre</button>
   </div>
 </body>
 </html>
