@@ -22,35 +22,59 @@ function init_member($tmp)
 	return ($arr);
 }
 
-$arr = array();
-fgets(STDIN);
-while (($line = trim(fgets(STDIN))))
-{
-	$tmp = explode(";", $line);
-	for ($i = 0; $i < count($arr); $i++)
-		if ($arr[$i][0] == $tmp[0])
-		{
-			if ($tmp[1] != NULL)
+function calculate(){
+	$arr = array();
+	fgets(STDIN);
+	while (($line = trim(fgets(STDIN))))
+	{
+		$tmp = explode(";", $line);
+		for ($i = 0; $i < count($arr); $i++)
+			if ($arr[$i][0] == $tmp[0])
 			{
-				$arr[$i][2] = ($arr[$i][2] * $arr[$i][1] + $tmp[1]) / ($arr[$i][1] + 1);
-				$arr[$i][1] += 1;
-			}
-			if (strcmp("moulinette", $tmp[2]) == 0)
-				$arr[$i][5] = $tmp[3];
-			else
-			{
-				if ($tmp[3] != NUll)
+				if ($tmp[1] != NULL && (strcmp("moulinette", $tmp[2]) != 0))
 				{
-					$arr[$i][4] = ($arr[$i][4] * $arr[$i][3] + $tmp[3]) / ($arr[$i][3] + 1);
-					$arr[$i][3] += 1;
+					$arr[$i][2] = ($arr[$i][2] * $arr[$i][1] + $tmp[1]) / ($arr[$i][1] + 1);
+					$arr[$i][1] += 1;
 				}
+				if (strcmp("moulinette", $tmp[2]) == 0)
+					$arr[$i][5] = $tmp[3];
+				else
+				{
+					if ($tmp[3] != NUll)
+					{
+						$arr[$i][4] = ($arr[$i][4] * $arr[$i][3] + $tmp[3]) / ($arr[$i][3] + 1);
+						$arr[$i][3] += 1;
+					}
+				}
+				break;
 			}
-			break;
-		}
-	if ($i == count($arr))
-		array_push($arr, init_member($tmp));
+		if ($i == count($arr))
+			array_push($arr, init_member($tmp));
+	}
+	sort($arr);
+	//	print_r($arr);
+	return ($arr);
 }
-sort($arr);
-print_r($arr);
 
+if ($argc == 2)
+{
+	$arr = calculate();
+	if (strcmp($argv[1], "average") == 0)
+	{
+		for ($i = 0; $i < count($arr); $i++)
+		{
+			$result += ($arr[$i][2] * $arr[$i][1] - $arr[$i][5]);
+			$totle += ($arr[$i][1] + 1);
+		}
+		$result /= $totle;
+		echo "$result\n";
+	}
+	elseif (strcmp($argv[1], "average_user") == 0)
+	{
+		for ($i = 0; $i < count($arr); $i++)
+			echo ($arr[$i][0] . ":" . $arr[$i][2] . "\n");
+	}
+	elseif (strcmp($argv[1], "moulinette_variance") == 0)
+		;
+}
 ?>
