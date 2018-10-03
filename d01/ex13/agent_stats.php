@@ -6,7 +6,7 @@ function init_member($tmp)
 {
 	$g_i = ($tmp[1] != NULL) ? 1 : 0;
 	$grade = ($tmp[1] != NUll) ? $tmp[1] : 0;
-	$mouli = (strcmp("moulinette", $tmp[2]) == 0 && $tmp[1] != NULL) ? $tmp[1] : 0;
+	$mouli = ($tmp[1] != NULL && strcmp("moulinette", $tmp[2]) == 0) ? $tmp[1] : 0;
 	$arr = array($tmp[0], $g_i, $grade, $mouli);
 	return ($arr);
 }
@@ -25,17 +25,12 @@ function calculate(){
 					$arr[$i][2] = ($arr[$i][2] * $arr[$i][1] + $tmp[1]) / ($arr[$i][1] + 1);
 					$arr[$i][1] += 1;
 				}
-				if (strcmp("moulinette", $tmp[2]) == 0 && $tmp[1] != NULL)
+				if ($tmp[1] != NULL && strcmp("moulinette", $tmp[2]) == 0)
 					$arr[$i][3] = $tmp[1];
 				break;
 			}
 		if ($i == count($arr))
 			array_push($arr, init_member($tmp));
-		if (strcmp("moulinette", $tmp[2]) == 0)
-		{
-			$result += $tmp[1];
-			$total += 1;
-		}
 	}
 	sort($arr);
 //	print_r($arr);
@@ -68,7 +63,5 @@ if ($argc == 2)
 			echo ($arr[$i][0] . ":" . $moulinette . "\n");
 		}
 	}
-	else
-		;
 }
 ?>
