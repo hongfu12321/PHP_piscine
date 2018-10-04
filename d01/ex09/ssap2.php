@@ -14,7 +14,11 @@ function ft_sort($a, $b){
 	if (!$a) return (1);
 	if (!$b) return (-1);
 	while ($a[$i] && $b[$i] && $a[$i] == $b[$i])
+	{
 		$i++;
+		if ($i == strlen($a)) return (-1);
+		if ($i == strlen($b)) return (1);
+	}
 	if (check_alpha($a[$i]) && !check_alpha($b[$i])) return (-1);
 	elseif (check_alpha($b[$i]) && !check_alpha($a[$i])) return (1);
 	elseif (is_numeric($a[$i]) && !is_numeric($b[$i])) return (-1);
