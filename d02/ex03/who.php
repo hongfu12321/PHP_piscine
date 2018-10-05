@@ -2,7 +2,7 @@
 <?php
 	$file = fopen("/var/run/utmpx", "rb");
 	fseek($file, 1256);
-//	date_default_timezone_set("USA/California");
+	date_default_timezone_set("America/Los_Angeles");
 	$arr = array();
 	while (!feof($file))
 	{
@@ -19,8 +19,6 @@
 	}
 	sort($arr);
 	foreach($arr as $value)
-	{
 		echo ($value[0] . "\t" . $value[1] . "\t" . $value[2] . "\n");
-	}	
 	fclose($file);
 ?>

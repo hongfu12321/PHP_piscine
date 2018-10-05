@@ -17,7 +17,8 @@ chdir($dir_path);
 
 foreach ($match[1] as $img)
 {
-	if (!strpos($img, "http://")) $img = ($url . $img);
+	if (!strstr($img, "http:")) $img = ($url . $img);
+	echo ($img . "\n");
 	$curl = curl_init($img);
 	$file_name = basename($img);
 	$file = fopen($file_name, 'wb');
