@@ -6,7 +6,7 @@ function get_data()
 		$_POST['submit'] === "OK")
 	{
 		$tab['login'] = $_POST['login'];
-		$tab['passwd'] = hash('sha512', $_POST['login']);
+		$tab['passwd'] = hash('sha512', $_POST['passwd']);
 	}
 	else
 	{
@@ -21,15 +21,11 @@ $dir_path = "../htdocs/private";
 $passwd_path = ($dir_path. "/passwd");
 if (!file_exists($dir_path))
 {
-	echo "make dir\n";
 	mkdir("../htdocs/");
 	mkdir($dir_path, 0755);
 }
 if (!file_exists($passwd_path))
-{
-	echo "make file\n";
 	file_put_contents($passwd_path, serialize(get_data()). "\n");
-}
 else
 {
 	$post_tab = get_data();
