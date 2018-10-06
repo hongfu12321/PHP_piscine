@@ -2,8 +2,8 @@
 
 function get_data()
 {
-	if (isset($_POST['login'], $_POST['oldpw'], $_POST['newpw'], $_POST['submit']) &&
-			$_POST['submit'] === "OK")
+	if ($_POST['login'] && $_POST['oldpw'] && $_POST['newpw'] &&
+		$_POST['submit'] && $_POST['submit'] === "OK")
 	{
 		$tab['login'] = $_POST['login'];
 		$tab['oldpw'] = hash('sha512', $_POST['oldpw']);
@@ -12,7 +12,7 @@ function get_data()
 	else
 	{
 		echo "ERROR here\n";
-		exit();
+		return (NULL);
 	}
 	return ($tab);
 }
