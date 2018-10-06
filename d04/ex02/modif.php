@@ -25,7 +25,7 @@ if (file_exists($file))
 	$modified = 0;
 	$post_tab = get_data();
 	$member_tab = unserialize(file_get_contents($file));
-	print_r($member_tab);
+//	print_r($member_tab);
 	foreach ($member_tab as $key=>$set)
 	{
 		if ($set['login'] == $post_tab['login'])
