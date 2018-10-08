@@ -8,7 +8,7 @@ $input = $argv[1];
 $url = ("http://" . $input);
 
 $text = file_get_contents($url); 
-preg_match_all('/img src="(.*)"/U', $text, $match);
+preg_match_all('/img.*src="(.*)"/U', $text, $match);
 //print_r($match);
 
 $dir_path = (getcwd() . '/' . $input);
