@@ -1,0 +1,17 @@
+<- Vertex ----------------------------------------------------------------------
+The Vertex class handles space 3D vertexes.
+There are three necessary components "x-axis", "y-axis", "z-axis".
+And two optional components "homogeneous coordinates" and "color"
+
+BASIC example:
+  $new_vertex       = new Vertex(array('x' => 0.0, 'y' => 0.0, 'z' => 0.0));
+
+OPTIONAL example:
+  $blue             = new Color(array('red' => 0, 'green' => 0, 'blue' => 255));
+  $new_vertex_blue  = new Vertex(array('x' => 1.0, 'y' => 0.0, 'z' => 0.0, 'w' => 0.7, 'color' => $blue));
+
+Default values are 'w' and 'color' are 1.0 and white (0xFFFFFF)
+
+Attributes are private, you may want to use getter and setter.
+No method is providing for this Class.
+---------------------------------------------------------------------- Vertex ->
