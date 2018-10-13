@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+  <title>Calculator</title>
+  <meta charset="UTF-8">
+  <style>
+    .op {flex:none;}
+    div .input {flex:none; font-size: 50px}
+  </style>
+  <script>
+    var left;
+    var right;
+    var op;
+
+    window.onload = function(){
+      left = document.getElementById("left");
+      right = document.getElementById("right");
+      op = document.getElementById("op");
+      setInterval("alert('Please, use me...')", 30000)
+    }
+
+    function invalid_num(num1, num2){
+      return (num1 >= 0 && Number.isInteger(num1) && num2 >= 0 && Number.isInteger(num2))
+    }
+
+    function calculate(){
+      let l = Number(left.value);
+      let r = Number(right.value);
+
+      if (!invalid_num(l, r)){
+        alert("Error :(");
+        return (false);
+      }
+      switch (op.value) {
+        case ('add'): result(l + r); break;
+        case ('mul'): result(l * r); break;
+        case ('div'):
+          if (r === 0) result("It’s over 9000!");
+          else result(l / r);
+          break;
+        case ('mod'):
+          if (r === 0) result("It’s over 9000!");
+          else result(l % r);
+          break;
+        case ('min'): result(l - r); break;
+        default: result("Nothing here ~"); break;
+      }
+    }
+
+    function result(value){
+      console.log(value);
+      alert(value);
+    }
+  </script>
+</head>
+<body>
+  <div style="margin:50px;">
+    <form style="display:flex;justify-content:space-around;">
+      <input type="text" id="left">
+      <select id="op">
+          <option value="add">+</option>
+          <option value="min">-</option>
+          <option value="mul">*</option>
+          <option value="div">/</option>
+          <option value="mod">%</option>
+      </select>
+      <input type="text" id="right">
+      <input type="submit" value="Try me!" onclick="calculate()">
+    </form>
+  <div>
+</body>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+  <title>Balloon</title>
+  <style>
+    .balloon{
+      width: 200px;
+      height: 200px;
+      background-color:red;
+      margin:auto;
+      border-radius:50%;
+    }
+  </style>
+  <script>
+    var color = {0: 'red', 1: 'green', 2: 'blue'};
+    var color_index = 0;
+    var size = 200;
+    var balloon;
+
+    window.onload = function(){
+      balloon = document.getElementById("b_init");
+    }
+
+    function b_onclick(){
+      if ((size += 10) > 420) size = 200;
+      if (++color_index > 2) color_index = 0;
+      new_balloon();
+    }
+
+    function b_mouse(){
+      if ((size -= 5) < 200) size = 200;
+      if (--color_index < 0) color_index = 2;
+      new_balloon();
+    }
+
+    function new_balloon(){
+      balloon.style.height = size + 'px';
+      balloon.style.width = size + 'px';
+      balloon.style.background = color[color_index];
+    }
+  </script>
+</head>
+<body>
+  <div id="b_init" class="balloon" onclick="b_onclick()" onmouseover="b_mouse()"></div>
+</body>
