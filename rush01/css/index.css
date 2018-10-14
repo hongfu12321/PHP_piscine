@@ -1,0 +1,28 @@
+#field{
+  display: flex;
+  justify-content: space-between;
+}
+
+.arena{
+  flex:none;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+}
+
+.board{
+  flex:none;
+  border: 1px solid black;
+  width: 17%;
+}
+
+table{
+  flex: none;
+  border-collapse: collapse;
+}
+
+table td{
+  border: 1px solid black;
+  width: 15px; height: 15px;
+  margin: 0px; padding: 0px;
+}

@@ -1,0 +1,2 @@
+Creating spaceship object.
+Which contain the position, live, movement.
